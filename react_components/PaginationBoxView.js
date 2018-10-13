@@ -28,7 +28,8 @@ export default class PaginationBoxView extends Component {
     previousLinkClassName : PropTypes.string,
     nextLinkClassName     : PropTypes.string,
     disabledClassName     : PropTypes.string,
-    breakClassName        : PropTypes.string
+    breakClassName        : PropTypes.string,
+    staticPagination      : PropTypes.bool
   };
 
   static defaultProps = {
@@ -42,7 +43,8 @@ export default class PaginationBoxView extends Component {
     nextLabel             : "Next",
     breakLabel            : "...",
     disabledClassName     : "disabled",
-    disableInitialCallback: false
+    disableInitialCallback: false,
+    staticPagination      : false
   };
 
   constructor(props) {
@@ -92,7 +94,9 @@ export default class PaginationBoxView extends Component {
 
     if (this.state.selected === selected) return;
 
-    this.setState({selected: selected});
+    if (!this.props.staticPagination) {
+      this.setState({selected: selected});
+    }
 
     // Call the callback with the new selected item:
     this.callCallback(selected);
