@@ -21,7 +21,8 @@
     "url": "https://github.com/AdeleD/react-paginate/issues"
   },
   "dependencies": {
-    "prop-types": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "webpack-cli": "^3.1.2"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -42,7 +43,6 @@
     "react-hot-loader": "^3.0.0",
     "serve-static": "^1.11.1",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
     "webpack-dev-middleware": "^3.0.1"
   },
   "scripts": {
